@@ -58,8 +58,8 @@ function App() {
         <div className="w-2/4 mx-auto">
           <h1 className="text-center text-2xl">Result</h1>
           <div className="mt-10">
-            <LineWave visible={isLoading} color="red" width="100%" height="100%" />
-            {!isLoading && <MDEditor.Markdown source={result} style={{ whiteSpace: 'pre-wrap' }} />}
+            <LineWave visible={isLoading} color="red" width="100%" />
+            {!isLoading && <MDEditor.Markdown source={result} style={{ whiteSpace: 'pre-wrap' }} className="p-3 " />}
           </div>
         </div>
       </div>
