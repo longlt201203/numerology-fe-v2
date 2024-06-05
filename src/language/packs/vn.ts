@@ -7,6 +7,9 @@ export const vn: NumerologyTransResource = {
         lsName: "Họ và Tên Đệm",
         birthday: "Ngày Sinh",
         submit: "Gửi",
-        result: "Kết Quả"
+        result: "Kết Quả",
+        errorTitle: "Lỗi",
+        validation_err: "Bạn phải nhập đầy đủ các thông tin cần thiết.",
+        unknown_err: "Lỗi không xác định."
     }
 };

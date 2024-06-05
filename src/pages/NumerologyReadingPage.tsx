@@ -1,3 +1,4 @@
+import SubmitButton from "@components/Button";
 import DatePicker, { DateValue } from "@components/DatePicker";
 import Input from "@components/Input";
 import InputGroup from "@components/InputGroup";
@@ -40,7 +41,7 @@ export default function NumerologyReadingPage() {
                     </InputGroup>
                 </form>
                 <DatePicker label={t(NumerologyTransKeys.birthday)} value={currentDateValue} onChange={(v) => setCurrentDateValue(v)} />
-                <button className="border rounded py-1 transition-all hover:bg-gray-50" onClick={() => handleSubmit()}>{t(NumerologyTransKeys.submit)}</button>
+                <SubmitButton handleSubmit={handleSubmit}>{t(NumerologyTransKeys.submit)}</SubmitButton>
             </div>
             <div className="mx-auto">
                 <Typography variant="h2" className="text-center">{t(NumerologyTransKeys.result)}</Typography>

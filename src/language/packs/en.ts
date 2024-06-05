@@ -7,6 +7,9 @@ export const en: NumerologyTransResource = {
         lsName: "Last Name & Surname",
         birthday: "Birthday",
         submit: "Submit",
-        result: "Result"
+        result: "Result",
+        errorTitle: "Error",
+        validation_err: "You must fill all the required information.",
+        unknown_err: "Unknown error."
     }
 };

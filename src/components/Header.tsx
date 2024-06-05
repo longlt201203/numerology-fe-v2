@@ -15,7 +15,7 @@ export default function Header() {
                 <Typography variant="h1" className="md:text-center">{t(NumerologyTransKeys.appName)}</Typography>
             </div>
             <div className="md:w-1/3 flex justify-center">
-                <select value={currentLanguage} onChange={(e) => changeCurrentLanguage(e.target.value)}>
+                <select className="outline-none" value={currentLanguage} onChange={(e) => changeCurrentLanguage(e.target.value)}>
                     {Object.keys(languages).map((key) => (<option key={key} value={languages[key].code}>{languages[key].label}</option>))}
                 </select>
             </div>

@@ -6,7 +6,10 @@ export const NumerologyTransKeys = {
     lsName: "lsName",
     birthday: "birthday",
     submit: "submit",
-    result: "result"
+    result: "result",
+    errorTitle: "errorTitle",
+    validation_err: "validation_err",
+    unknown_err: "unknown_err"
 }
 
 export interface NumerologyTransResource extends Resource {

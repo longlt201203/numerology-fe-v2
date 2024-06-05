@@ -10,6 +10,9 @@ const router = createBrowserRouter([
             {
                 path: "",
                 element: <NumerologyReadingPage/>
+            },
+            {
+                
             }
         ]
     }
