@@ -1,5 +1,6 @@
 export default class AnalyzeRequestDto {
-    fullName: string;
+    firstName: string;
+    lsName: string;
     dob: string;
-    country: string;
+    lang: string;
 }
