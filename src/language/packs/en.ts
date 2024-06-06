@@ -7,9 +7,14 @@ export const en: NumerologyTransResource = {
         lsName: "Last Name & Surname",
         birthday: "Birthday",
         submit: "Submit",
+        addPerson: "Add Person",
+        remove: "Remove",
         result: "Result",
         errorTitle: "Error",
         validation_err: "You must fill all the required information.",
-        unknown_err: "Unknown error."
+        unknown_err: "Unknown error.",
+        numerologyReadingTitle: "Numerology Reading",
+        numerologyComparingTitle: "Numerology Comparing",
+        aboutTitle: "About"
     }
 };

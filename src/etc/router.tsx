@@ -1,4 +1,5 @@
 import RootLayout from "@layouts/RootLayout";
+import NumerologyComparingPage from "@pages/NumerologyComparingPage";
 import NumerologyReadingPage from "@pages/NumerologyReadingPage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -12,7 +13,8 @@ const router = createBrowserRouter([
                 element: <NumerologyReadingPage/>
             },
             {
-                
+                path: "compare",
+                element: <NumerologyComparingPage/>
             }
         ]
     }

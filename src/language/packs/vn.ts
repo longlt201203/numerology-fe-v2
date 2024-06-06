@@ -7,9 +7,14 @@ export const vn: NumerologyTransResource = {
         lsName: "Họ và Tên Đệm",
         birthday: "Ngày Sinh",
         submit: "Gửi",
+        addPerson: "Thêm bạn bè",
+        remove: "Xóa",
         result: "Kết Quả",
         errorTitle: "Lỗi",
         validation_err: "Bạn phải nhập đầy đủ các thông tin cần thiết.",
-        unknown_err: "Lỗi không xác định."
+        unknown_err: "Lỗi không xác định.",
+        numerologyReadingTitle: "Xem thần số học",
+        numerologyComparingTitle: "So sánh thần số học",
+        aboutTitle: "Tìm hiểu"
     }
 };

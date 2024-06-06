@@ -1,4 +1,4 @@
-import SubmitButton from "@components/Button";
+import Button from "@components/Button";
 import DatePicker, { DateValue } from "@components/DatePicker";
 import Input from "@components/Input";
 import InputGroup from "@components/InputGroup";
@@ -25,23 +25,24 @@ export default function NumerologyReadingPage() {
         dob: "",
         lang: currentLanguage
     });
-    const [currentDateValue, setCurrentDateValue] = useState<DateValue>(new Date());
+    const [currentDateValue, setCurrentDateValue] = useState<Date>(new Date());
 
     const handleSubmit = () => {
-        numerologyAnalyze({ ...analyzeRequestDto, dob: currentDateValue?.toLocaleString() || "", lang: currentLanguage });
+        numerologyAnalyze({ ...analyzeRequestDto, dob: currentDateValue.toISOString(), lang: currentLanguage });
     }
 
     return (
         <MainLayout>
             <div className="my-10 flex flex-col gap-y-3 mx-auto border rounded-lg p-3">
+                <Typography variant="h3" className="text-center">{t(NumerologyTransKeys.numerologyReadingTitle)}</Typography>
                 <form autoComplete="off" className="flex flex-col gap-y-3">
                     <InputGroup>
                         <Input type="text" label={t(NumerologyTransKeys.firstName)} value={analyzeRequestDto.firstName} onChange={(e) => setAnalyzeRequestDto({ ...analyzeRequestDto, firstName: e.target.value })} />
                         <Input type="text" label={t(NumerologyTransKeys.lsName)} value={analyzeRequestDto.lsName} onChange={(e) => setAnalyzeRequestDto({ ...analyzeRequestDto, lsName: e.target.value })} />
                     </InputGroup>
                 </form>
-                <DatePicker label={t(NumerologyTransKeys.birthday)} value={currentDateValue} onChange={(v) => setCurrentDateValue(v)} />
-                <SubmitButton handleSubmit={handleSubmit}>{t(NumerologyTransKeys.submit)}</SubmitButton>
+                <DatePicker label={t(NumerologyTransKeys.birthday)} value={currentDateValue} onChange={(v) => v && v instanceof Date && setCurrentDateValue(v)} />
+                <Button onClick={handleSubmit}>{t(NumerologyTransKeys.submit)}</Button>
             </div>
             <div className="mx-auto">
                 <Typography variant="h2" className="text-center">{t(NumerologyTransKeys.result)}</Typography>

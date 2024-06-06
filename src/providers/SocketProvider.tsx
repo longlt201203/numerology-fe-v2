@@ -4,6 +4,7 @@ import socket from "@etc/socket";
 import SocketEvents from "@etc/socket-events";
 import { NumerologyTransKeys } from "@language/numerology-trans-props";
 import AnalyzeRequestDto from "@services/dto/analyze-request.dto";
+import CompareRequestDto from "@services/dto/compare-request.dto";
 import { PropsWithChildren, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
@@ -50,8 +51,16 @@ export default function SocketProvider({ children }: PropsWithChildren) {
         }
     }
 
+    const numerologyCompare = (dto: CompareRequestDto) => {
+        if (!isStreaming) {
+            setIsStreaming(true);
+            setCurrentText("");
+            socket.emit(SocketEvents.COMPARE, dto);
+        }
+    }
+
     return (
-        <SocketContext.Provider value={{ currentText, isStreaming, numerologyAnalyze }}>
+        <SocketContext.Provider value={{ currentText, isStreaming, numerologyAnalyze, numerologyCompare }}>
             {children}
         </SocketContext.Provider>
     )
