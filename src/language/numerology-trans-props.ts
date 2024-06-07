@@ -5,6 +5,7 @@ export const NumerologyTransKeys = {
     firstName: "firstName",
     lsName: "lsName",
     birthday: "birthday",
+    year: "year",
     submit: "submit",
     addPerson: "addPerson",
     remove: "remove",
@@ -14,6 +15,7 @@ export const NumerologyTransKeys = {
     unknown_err: "unknown_err",
     numerologyReadingTitle: "numerologyReadingTitle",
     numerologyComparingTitle: "numerologyComparingTitle",
+    numerologyCalculateYear: "numerologyCalculateYear",
     aboutTitle: "aboutTitle",
 }
 

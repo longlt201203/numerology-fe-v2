@@ -1,6 +1,8 @@
 import RootLayout from "@layouts/RootLayout";
+import AboutPage from "@pages/AboutPage";
 import NumerologyComparingPage from "@pages/NumerologyComparingPage";
 import NumerologyReadingPage from "@pages/NumerologyReadingPage";
+import NumerologyYearlyPage from "@pages/NumerologyYearlyPage";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
             {
                 path: "compare",
                 element: <NumerologyComparingPage/>
+            },
+            {
+                path: "calculate-year",
+                element: <NumerologyYearlyPage/>
+            },
+            {
+                path: "about",
+                element: <AboutPage/>
             }
         ]
     }

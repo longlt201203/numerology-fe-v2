@@ -6,6 +6,6 @@ export interface ButtonProps extends PropsWithChildren {
 
 export default function Button(props: ButtonProps) {
     return (
-        <button className="border rounded py-1 transition-all hover:bg-gray-50" onClick={props.onClick}>{props.children}</button>
+        <button className="border rounded py-1 transition-all hover:bg-themeColors-starryWhite" onClick={props.onClick}>{props.children}</button>
     );
 }

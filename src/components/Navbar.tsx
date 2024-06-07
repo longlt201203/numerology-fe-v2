@@ -7,7 +7,7 @@ function NavbarLink({ children, to }: PropsWithChildren & { to: string }) {
     return (
         <NavLink to={to}>
             {({ isActive }) => (
-                <span className={"font-lora hover:underline" + (isActive ? " underline" : "")}>{children}</span>
+                <span className={"text-themeColors-mysticBlue font-lora hover:underline" + (isActive ? " underline" : "")}>{children}</span>
             )}
         </NavLink>
     );
@@ -20,6 +20,7 @@ export default function Navbar() {
         <div className="flex gap-x-4 justify-center">
             <NavbarLink to="/">{t(NumerologyTransKeys.numerologyReadingTitle)}</NavbarLink>
             <NavbarLink to="/compare">{t(NumerologyTransKeys.numerologyComparingTitle)}</NavbarLink>
+            <NavbarLink to="/calculate-year">{t(NumerologyTransKeys.numerologyCalculateYear)}</NavbarLink>
             <NavbarLink to="/about">{t(NumerologyTransKeys.aboutTitle)}</NavbarLink>
         </div>
     );

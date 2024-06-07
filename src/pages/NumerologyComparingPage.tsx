@@ -81,7 +81,7 @@ export default function NumerologyComparingPage() {
             <div className="mx-auto">
                 <Typography variant="h2" className="text-center">{t(NumerologyTransKeys.result)}</Typography>
                 <div className="mt-10">
-                    <LineWave visible={isStreaming} color="red" width="100%" />
+                    <LineWave visible={isStreaming} color="#1E3A8A" width="100%" />
                     {currentText && <MDEditor.Markdown source={currentText} style={{ whiteSpace: 'pre-wrap' }} className="p-3 bg-white font-roboto" />}
                 </div>
             </div>

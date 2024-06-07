@@ -4,6 +4,7 @@ import socket from "@etc/socket";
 import SocketEvents from "@etc/socket-events";
 import { NumerologyTransKeys } from "@language/numerology-trans-props";
 import AnalyzeRequestDto from "@services/dto/analyze-request.dto";
+import CalculateYearRequestDto from "@services/dto/calculate-year-request.dto";
 import CompareRequestDto from "@services/dto/compare-request.dto";
 import { PropsWithChildren, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -30,12 +31,12 @@ export default function SocketProvider({ children }: PropsWithChildren) {
     useEffect(() => {
         socket.connect();
 
-        socket.on(SocketEvents.ANALYZING, handleAnalyzing);
+        socket.on(SocketEvents.STREAMING, handleAnalyzing);
         socket.on(SocketEvents.END_STREAM, handleEndStream);
         socket.on(SocketEvents.ERROR, handleError);
 
         return () => {
-            socket.off(SocketEvents.ANALYZING, handleAnalyzing);
+            socket.off(SocketEvents.STREAMING, handleAnalyzing);
             socket.off(SocketEvents.END_STREAM, handleEndStream);
             socket.off(SocketEvents.ERROR, handleError);
 
@@ -59,8 +60,16 @@ export default function SocketProvider({ children }: PropsWithChildren) {
         }
     }
 
+    const numerologyCalculateYear = (dto: CalculateYearRequestDto) => {
+        if (!isStreaming) {
+            setIsStreaming(true);
+            setCurrentText("");
+            socket.emit(SocketEvents.CALCULATE_YEAR, dto);
+        }
+    }
+
     return (
-        <SocketContext.Provider value={{ currentText, isStreaming, numerologyAnalyze, numerologyCompare }}>
+        <SocketContext.Provider value={{ currentText, isStreaming, numerologyAnalyze, numerologyCompare, numerologyCalculateYear }}>
             {children}
         </SocketContext.Provider>
     )

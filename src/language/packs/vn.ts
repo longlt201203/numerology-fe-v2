@@ -6,6 +6,7 @@ export const vn: NumerologyTransResource = {
         firstName: "Tên",
         lsName: "Họ và Tên Đệm",
         birthday: "Ngày Sinh",
+        year: "Năm",
         submit: "Gửi",
         addPerson: "Thêm bạn bè",
         remove: "Xóa",
@@ -15,6 +16,7 @@ export const vn: NumerologyTransResource = {
         unknown_err: "Lỗi không xác định.",
         numerologyReadingTitle: "Xem thần số học",
         numerologyComparingTitle: "So sánh thần số học",
+        numerologyCalculateYear: "Tử vi thần số theo năm",
         aboutTitle: "Tìm hiểu"
     }
 };
